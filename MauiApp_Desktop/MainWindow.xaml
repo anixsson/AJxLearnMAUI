@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Window xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:pages="clr-namespace:MauiApp_Desktop.Pages"
+        x:Class="MauiApp_Desktop.MainWindow">
+        <Window.Page>
+                <FlyoutPage x:Name="FlyoutPager"
+                            Title="This is the title on flyout"
+                            FlyoutLayoutBehavior="Split"
+                            BackgroundColor="DarkCyan"
+                            IsGestureEnabled="False">
+                        <FlyoutPage.Flyout>
+                                <ContentPage BackgroundColor="Chocolate" Title="This is Content Page">
+                                        <VerticalStackLayout Padding="5" Spacing="5">
+                                                <Button
+                                                    Text="MAUI WINDOW"
+                                                    Clicked="Button_OnPressed"
+                                                    CommandParameter="https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/window?view=net-maui-10.0" />
+
+                                                <Button
+                                                    Text="MAUI XAML"
+                                                    Clicked="Button_OnPressed"
+                                                    CommandParameter="https://learn.microsoft.com/en-us/dotnet/maui/xaml/?view=net-maui-10.0" />
+                                        </VerticalStackLayout>
+                                </ContentPage>
+                        </FlyoutPage.Flyout>
+                        <FlyoutPage.Detail>
+                                <pages:StartPage/>
+                        </FlyoutPage.Detail>
+                </FlyoutPage>
+        </Window.Page>
+</Window>
